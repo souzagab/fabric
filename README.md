@@ -1,78 +1,192 @@
 <div align="center">
+    <a href="https://go.warp.dev/fabric" target="_blank">
+        <sup>Special thanks to:</sup>
+        <br>
+        <img alt="Warp sponsorship" width="400" src="https://raw.githubusercontent.com/warpdotdev/brand-assets/refs/heads/main/Github/Sponsor/Warp-Github-LG-02.png">
+        <br>
+        <h>Warp, built for coding with multiple AI agents</b>
+        <br>
+        <sup>Available for macOS, Linux and Windows</sup>
+    </a>
+</div>
 
-<img src="./images/fabric-logo-gif.gif" alt="fabriclogo" width="400" height="400"/>
+<br>
+
+<div align="center">
+
+<img src="./docs/images/fabric-logo-gif.gif" alt="fabriclogo" width="400" height="400"/>
 
 # `fabric`
 
-![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)
+[![Static Badge](https://img.shields.io/badge/mission-human_flourishing_via_AI_augmentation-purple)](https://github.com/danielmiessler/fabric)
 <br />
-![GitHub top language](https://img.shields.io/github/languages/top/danielmiessler/fabric)
-![GitHub last commit](https://img.shields.io/github/last-commit/danielmiessler/fabric)
+[![GitHub top language](https://img.shields.io/github/languages/top/danielmiessler/fabric)](https://github.com/danielmiessler/fabric)
+[![GitHub last commit](https://img.shields.io/github/last-commit/danielmiessler/fabric)](https://github.com/danielmiessler/fabric/commits/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/danielmiessler/fabric)
 
-<p class="align center">
+<div align="center">
 <h4><code>fabric</code> is an open-source framework for augmenting humans using AI.</h4>
+</div>
+
+<p align="center">
+  <strong>English</strong> ·
+  <a href="README.zh.md">中文</a>
 </p>
 
-[Introduction Video](#introduction-video-by-network-chuck) •
+![Screenshot of fabric](./docs/images/fabric-summarize.png)
+
+</div>
+
+[Updates](#updates) •
 [What and Why](#what-and-why) •
 [Philosophy](#philosophy) •
-[Quickstart](#quickstart) •
-[Structure](#structure) •
+[Installation](#installation) •
+[Usage](#usage) •
+[REST API](#rest-api-server) •
 [Examples](#examples) •
+[Just Use the Patterns](#just-use-the-patterns) •
 [Custom Patterns](#custom-patterns) •
 [Helper Apps](#helper-apps) •
-[Examples](#examples) •
 [Meta](#meta)
 
 </div>
 
-## Navigation
-
-- [Introduction Videos](#introduction-video-by-network-chuck)
-- [What and Why](#what-and-why)
-- [Philosophy](#philosophy)
-  - [Breaking problems into components](#breaking-problems-into-components)
-  - [Too many prompts](#too-many-prompts)
-  - [The Fabric approach to prompting](#our-approach-to-prompting)
-- [Quickstart](#quickstart)
-  - [Setting up the fabric commands](#setting-up-the-fabric-commands)
-  - [Using the fabric client](#using-the-fabric-client)
-  - [Just use the Patterns](#just-use-the-patterns)
-  - [Create your own Fabric Mill](#create-your-own-fabric-mill)
-- [Updating](#updating)
-- [Structure](#structure)
-  - [Components](#components)
-  - [CLI-native](#cli-native)
-  - [Directly calling Patterns](#directly-calling-patterns)
-- [Examples](#examples)
-- [Custom Patterns](#custom-patterns)
-- [Helper Apps](#helper-apps)
-- [Meta](#meta)
-  - [Primary contributors](#primary-contributors)
-
-<br />
-
-> [!NOTE]
-> May 23, 2024 — We will be switching Fabric to Go in a few weeks to avoid all the installation issues with Python. The Go version will be dead-simple to install and will be even faster. Plus easier to update. We already have it working thanks to the heroic efforts of @xssdoctor, and we're just working on testing now! Stay tuned for more info on the release date!
-
-## Introduction video by Network Chuck!
-
-This is a **brilliant** video by Network Chuck that goes over why he's started using Fabric for all things AI. He talks about the spirit of the project, how to install it, and how he uses it, and he just generally articulates the spirit of what we're doing here SO WELL. Thanks to Chuck for this!
-
-<div class="center">
-<a href="https://youtu.be/UbDyjIIGaxQ"><img width="1000" alt="image" src="https://github.com/danielmiessler/fabric/assets/50654/a6a61885-7bb1-48d7-8ea9-777ebb2fdb94"></a>
-</div>
-
 ## What and why
 
-Since the start of 2023 and GenAI we've seen a massive number of AI applications for accomplishing tasks. It's powerful, but _it's not easy to integrate this functionality into our lives._
+Since the start of modern AI in late 2022 we've seen an **_extraordinary_** number of AI applications for accomplishing tasks. There are thousands of websites, chat-bots, mobile apps, and other interfaces for using all the different AI out there.
 
-<div align="center">
+It's all really exciting and powerful, but _it's not easy to integrate this functionality into our lives._
+
+<div class="align center">
 <h4>In other words, AI doesn't have a capabilities problem—it has an <em>integration</em> problem.</h4>
 </div>
 
-Fabric was created to address this by enabling everyone to granularly apply AI to everyday challenges.
+**Fabric was created to address this by creating and organizing the fundamental units of AI—the prompts themselves!**
+
+Fabric organizes prompts by real-world task, allowing people to create, collect, and organize their most important AI solutions in a single place for use in their favorite tools. And if you're command-line focused, you can use Fabric itself as the interface!
+
+## Updates
+
+For a deep dive into Fabric and its internals, read the documentation in the [docs folder](https://github.com/danielmiessler/Fabric/tree/main/docs). There is
+also the extremely useful and regularly updated [DeepWiki](https://deepwiki.com/danielmiessler/Fabric) for Fabric.
+
+<details>
+<summary>Click to view recent updates</summary>
+
+Dear Users,
+
+We've been doing so many exciting things here at Fabric, I wanted to give a quick summary here to give you a sense of our development velocity!
+
+Below are the **new features and capabilities** we've added (newest first):
+
+### Recent Major Features
+
+- [v1.4.447](https://github.com/danielmiessler/fabric/releases/tag/v1.4.447) (April 16, 2026) — **Claude Opus 4.7**: Updates the Anthropic SDK to v1.37.0 and adds the new [Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7) to the available models, including 1M-token context window support.
+- [v1.4.437](https://github.com/danielmiessler/fabric/releases/tag/v1.4.437) (March 16, 2026) — **OpenAI Codex PLugin**: Fabric now supports using OpenAI Codex (with your OpenAI subscription) as a backend!
+- [v1.4.417](https://github.com/danielmiessler/fabric/releases/tag/v1.4.417) (Feb 21, 2026) — **Azure AI Gateway Plugin**: Added Azure AI Gateway plugin supporting multiple backends (AWS Bedrock, Azure OpenAI, Google Vertex AI) through a unified Azure APIM Gateway with shared subscription key authentication.
+- [v1.4.416](https://github.com/danielmiessler/fabric/releases/tag/v1.4.416) (Feb 21, 2026) — **Azure Entra ID Authentication**: Added Azure Entra ID authentication plugin with shared Azure utilities, Entra ID/MSAL support, and extracted common Azure logic into a reusable `azurecommon` package.
+- [v1.4.380](https://github.com/danielmiessler/fabric/releases/tag/v1.4.380) (Jan 15, 2026) — **Microsoft 365 Copilot Integration**: Added support for corporate Microsoft 365 Copilot, enabling enterprise users to leverage AI grounded in their organization's Microsoft 365 data (emails, documents, meetings.
+- [v1.4.378](https://github.com/danielmiessler/fabric/releases/tag/v1.4.378) (Jan 14, 2026) — **Digital Ocean GenAI Support**: Added support for Digital Ocean GenAI, along with a [guide for how to use it](./docs/DigitalOcean-Agents-Setup.md).
+- [v1.4.356](https://github.com/danielmiessler/fabric/releases/tag/v1.4.356) (Dec 22, 2025) — **Complete Internationalization**: Full i18n support for setup prompts across all 10 languages with intelligent environment variable handling—making Fabric truly accessible worldwide while maintaining configuration consistency.
+- [v1.4.350](https://github.com/danielmiessler/fabric/releases/tag/v1.4.350) (Dec 18, 2025) — **Interactive API Documentation**: Adds Swagger/OpenAPI UI at `/swagger/index.html` with comprehensive REST API documentation, enhanced developer guides, and improved endpoint discoverability for easier integration.
+- [v1.4.338](https://github.com/danielmiessler/fabric/releases/tag/v1.4.338) (Dec 4, 2025) — Add Abacus vendor support for Chat-LLM
+  models (see [RouteLLM APIs](https://abacus.ai/app/route-llm-apis)).
+- [v1.4.337](https://github.com/danielmiessler/fabric/releases/tag/v1.4.337) (Dec 4, 2025) — Add "Z AI" vendor support. See the [Z AI overview](https://docs.z.ai/guides/overview/overview) page for more details.
+- [v1.4.334](https://github.com/danielmiessler/fabric/releases/tag/v1.4.334) (Nov 26, 2025) — **Claude Opus 4.5**: Updates the Anthropic SDK to the latest and adds the new [Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5) to the available models.
+- [v1.4.331](https://github.com/danielmiessler/fabric/releases/tag/v1.4.331) (Nov 23, 2025) — **Support for GitHub Models**: Adds support for using GitHub Models.
+- [v1.4.322](https://github.com/danielmiessler/fabric/releases/tag/v1.4.322) (Nov 5, 2025) — **Interactive HTML Concept Maps and Claude Sonnet 4.5**: Adds `create_conceptmap` pattern for visual knowledge representation using Vis.js, introduces WELLNESS category with psychological analysis patterns, and upgrades to Claude Sonnet 4.5
+- [v1.4.317](https://github.com/danielmiessler/fabric/releases/tag/v1.4.317) (Sep 21, 2025) — **Portuguese Language Variants**: Adds BCP 47 locale normalization with support for Brazilian Portuguese (pt-BR) and European Portuguese (pt-PT) with intelligent fallback chains
+- [v1.4.314](https://github.com/danielmiessler/fabric/releases/tag/v1.4.314) (Sep 17, 2025) — **Azure OpenAI Migration**: Migrates to official `openai-go/azure` SDK with improved authentication and default API version support
+- [v1.4.311](https://github.com/danielmiessler/fabric/releases/tag/v1.4.311) (Sep 13, 2025) — **More internationalization support**: Adds de (German), fa (Persian / Farsi), fr (French), it (Italian),
+  ja (Japanese), pt (Portuguese), zh (Chinese)
+- [v1.4.309](https://github.com/danielmiessler/fabric/releases/tag/v1.4.309) (Sep 9, 2025) — **Comprehensive internationalization support**: Includes English and Spanish locale files.
+- [v1.4.303](https://github.com/danielmiessler/fabric/releases/tag/v1.4.303) (Aug 29, 2025) — **New Binary Releases**: Linux ARM and Windows ARM targets. You can run Fabric on the Raspberry PI and on your Windows Surface!
+- [v1.4.294](https://github.com/danielmiessler/fabric/releases/tag/v1.4.294) (Aug 20, 2025) — **Venice AI Support**: Added the Venice AI provider. Venice is a Privacy-First, Open-Source AI provider. See their ["About Venice"](https://docs.venice.ai/overview/about-venice) page for details.
+- [v1.4.291](https://github.com/danielmiessler/fabric/releases/tag/v1.4.291) (Aug 18, 2025) — **Speech To Text**: Add OpenAI speech-to-text support with `--transcribe-file`, `--transcribe-model`, and `--split-media-file` flags.
+
+These features represent our commitment to making Fabric the most powerful and flexible AI augmentation framework available!
+
+</details>
+
+## Intro videos
+
+Keep in mind that many of these were recorded when Fabric was Python-based, so remember to use the current [install instructions](#installation) below.
+
+- [Network Chuck](https://www.youtube.com/watch?v=UbDyjIIGaxQ)
+- [David Bombal](https://www.youtube.com/watch?v=vF-MQmVxnCs)
+- [My Own Intro to the Tool](https://www.youtube.com/watch?v=wPEyyigh10g)
+- [More Fabric YouTube Videos](https://www.youtube.com/results?search_query=fabric+ai)
+
+## Navigation
+
+- [`fabric`](#fabric)
+  - [What and why](#what-and-why)
+  - [Updates](#updates)
+    - [Recent Major Features](#recent-major-features)
+  - [Intro videos](#intro-videos)
+  - [Navigation](#navigation)
+  - [Changelog](#changelog)
+  - [Philosophy](#philosophy)
+    - [Breaking problems into components](#breaking-problems-into-components)
+    - [Too many prompts](#too-many-prompts)
+  - [Installation](#installation)
+    - [One-Line Install (Recommended)](#one-line-install-recommended)
+    - [Manual Binary Downloads](#manual-binary-downloads)
+    - [Using package managers](#using-package-managers)
+      - [macOS (Homebrew)](#macos-homebrew)
+      - [Arch Linux (AUR)](#arch-linux-aur)
+      - [Windows](#windows)
+      - [Windows (Scoop)](#windows-scoop)
+    - [From Source](#from-source)
+    - [Docker](#docker)
+    - [Environment Variables](#environment-variables)
+    - [Setup](#setup)
+    - [Supported AI Providers](#supported-ai-providers)
+    - [Per-Pattern Model Mapping](#per-pattern-model-mapping)
+    - [Add aliases for all patterns](#add-aliases-for-all-patterns)
+      - [Save your files in markdown using aliases](#save-your-files-in-markdown-using-aliases)
+    - [Migration](#migration)
+    - [Upgrading](#upgrading)
+    - [Shell Completions](#shell-completions)
+      - [Quick install (no clone required)](#quick-install-no-clone-required)
+      - [Zsh Completion](#zsh-completion)
+      - [Bash Completion](#bash-completion)
+      - [Fish Completion](#fish-completion)
+  - [Usage](#usage)
+    - [Debug Levels](#debug-levels)
+    - [Dry Run Mode](#dry-run-mode)
+    - [Extensions](#extensions)
+  - [REST API Server](#rest-api-server)
+    - [Ollama Compatibility Mode](#ollama-compatibility-mode)
+  - [Our approach to prompting](#our-approach-to-prompting)
+  - [Examples](#examples)
+  - [Just use the Patterns](#just-use-the-patterns)
+    - [Prompt Strategies](#prompt-strategies)
+      - [Available Strategies](#available-strategies)
+  - [Custom Patterns](#custom-patterns)
+    - [Setting Up Custom Patterns](#setting-up-custom-patterns)
+    - [Using Custom Patterns](#using-custom-patterns)
+    - [How It Works](#how-it-works)
+  - [Helper Apps](#helper-apps)
+    - [`to_pdf`](#to_pdf)
+    - [`to_pdf` Installation](#to_pdf-installation)
+    - [`code2context`](#code2context)
+    - [`generate_changelog`](#generate_changelog)
+  - [pbpaste](#pbpaste)
+  - [Web Interface (Fabric Web App)](#web-interface-fabric-web-app)
+  - [Meta](#meta)
+    - [Primary contributors](#primary-contributors)
+    - [Contributors](#contributors)
+  - [💜 Support This Project](#-support-this-project)
+
+<br />
+
+## Changelog
+
+Fabric is evolving rapidly.
+
+Stay current with the latest features by reviewing the [CHANGELOG](./CHANGELOG.md) for all recent changes.
 
 ## Philosophy
 
@@ -90,31 +204,627 @@ Our approach is to break problems into individual pieces (see below) and then ap
 
 Prompts are good for this, but the biggest challenge I faced in 2023——which still exists today—is **the sheer number of AI prompts out there**. We all have prompts that are useful, but it's hard to discover new ones, know if they are good or not, _and manage different versions of the ones we like_.
 
-One of <code>fabric</code>'s primary features is helping people collect and integrate prompts, which we call _Patterns_, into various parts of their lives.
+One of `fabric`'s primary features is helping people collect and integrate prompts, which we call _Patterns_, into various parts of their lives.
 
 Fabric has Patterns for all sorts of life and work activities, including:
 
-- Extracting the most interesting parts of YouTube videos and podcasts.
-- Writing an essay in your own voice with just an idea as an input.
-- Summarizing opaque academic papers.
-- Creating perfectly matched AI art prompts for a piece of writing.
-- Rating the quality of content to see if you want to read/watch the whole thing.
-- Getting summaries of long, boring content.
-- Explaining code to you.
-- Turning bad documentation into usable documentation.
-- Creating social media posts from any content input.
+- Extracting the most interesting parts of YouTube videos and podcasts
+- Writing an essay in your own voice with just an idea as an input
+- Summarizing opaque academic papers
+- Creating perfectly matched AI art prompts for a piece of writing
+- Rating the quality of content to see if you want to read/watch the whole thing
+- Getting summaries of long, boring content
+- Explaining code to you
+- Turning bad documentation into usable documentation
+- Creating social media posts from any content input
 - And a million more…
 
-### Our approach to prompting
+## Installation
+
+### One-Line Install (Recommended)
+
+**Unix/Linux/macOS:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/danielmiessler/fabric/main/scripts/installer/install.sh | bash
+```
+
+**Windows PowerShell:**
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/danielmiessler/fabric/main/scripts/installer/install.ps1 | iex
+```
+
+> See [scripts/installer/README.md](./scripts/installer/README.md) for custom installation options and troubleshooting.
+
+### Manual Binary Downloads
+
+The latest release binary archives and their expected SHA256 hashes can be found at <https://github.com/danielmiessler/fabric/releases/latest>
+
+### Using package managers
+
+**NOTE:** using Homebrew or the Arch Linux package managers makes `fabric` available as `fabric-ai`, so add
+the following alias to your shell startup files to account for this:
+
+```bash
+alias fabric='fabric-ai'
+```
+
+#### macOS (Homebrew)
+
+`brew install fabric-ai`
+
+#### Arch Linux (AUR)
+
+`yay -S fabric-ai`
+
+#### Windows
+
+Use the official Microsoft supported `Winget` tool:
+
+`winget install danielmiessler.Fabric`
+
+#### Windows (Scoop)
+
+`scoop install fabric-ai`
+
+### From Source
+
+To install Fabric, [make sure Go is installed](https://go.dev/doc/install), and then run the following command.
+
+```bash
+# Install Fabric directly from the repo
+go install github.com/danielmiessler/fabric/cmd/fabric@latest
+```
+
+### Docker
+
+Run Fabric using pre-built Docker images:
+
+```bash
+# Use latest image from Docker Hub
+docker run --rm -it kayvan/fabric:latest --version
+
+# Use specific version from GHCR
+docker run --rm -it ghcr.io/ksylvan/fabric:v1.4.305 --version
+
+# Run setup (first time)
+mkdir -p $HOME/.fabric-config
+docker run --rm -it -v $HOME/.fabric-config:/home/appuser/.config/fabric kayvan/fabric:latest --setup
+
+# Use Fabric with your patterns
+docker run --rm -it -v $HOME/.fabric-config:/home/appuser/.config/fabric kayvan/fabric:latest -p summarize
+
+# Run the REST API server (see REST API Server section)
+docker run --rm -it -p 8080:8080 -v $HOME/.fabric-config:/home/appuser/.config/fabric kayvan/fabric:latest --serve
+```
+
+**Images available at:**
+
+- Docker Hub: [kayvan/fabric](https://hub.docker.com/repository/docker/kayvan/fabric/general)
+- GHCR: [ksylvan/fabric](https://github.com/ksylvan/fabric/pkgs/container/fabric)
+
+See [scripts/docker/README.md](./scripts/docker/README.md) for building custom images and advanced configuration.
+
+### Environment Variables
+
+You may need to set some environment variables in your `~/.bashrc` on linux or `~/.zshrc` file on mac to be able to run the `fabric` command. Here is an example of what you can add:
+
+For Intel based macs or linux
+
+```bash
+# Golang environment variables
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+
+# Update PATH to include GOPATH and GOROOT binaries
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+```
+
+for Apple Silicon based macs
+
+```bash
+# Golang environment variables
+export GOROOT=$(brew --prefix go)/libexec
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+```
+
+### Setup
+
+Now run the following command
+
+```bash
+# Run the setup to set up your directories and keys
+fabric --setup
+```
+
+If everything works you are good to go.
+
+### Supported AI Providers
+
+Fabric supports a wide range of AI providers:
+
+**Native Integrations:**
+
+- OpenAI
+- OpenAI Codex (ChatGPT/Codex subscription OAuth via private backend)
+- Anthropic (Claude)
+- Google Gemini
+- Ollama (local models)
+- Azure OpenAI
+- Amazon Bedrock
+- Vertex AI
+- LM Studio
+- Perplexity
+
+**OpenAI-Compatible Providers:**
+
+- Abacus
+- AIML
+- Cerebras
+- DeepSeek
+- DigitalOcean
+- GitHub Models
+- GrokAI
+- Groq
+- Langdock
+- LiteLLM
+- MiniMax
+- Mistral
+- Novita AI
+- OpenRouter
+- Pzero
+- SiliconCloud
+- Synthorai
+- Together
+- Venice AI
+- Z AI
+
+Run `fabric --setup` to configure your preferred provider(s), or use `fabric --listvendors` to see all available vendors.
+
+### Per-Pattern Model Mapping
+
+ You can configure specific models for individual patterns using environment variables
+ like `FABRIC_MODEL_PATTERN_NAME=vendor|model`
+
+ This makes it easy to maintain these per-pattern model mappings in your shell startup files.
+
+### Add aliases for all patterns
+
+In order to add aliases for all your patterns and use them directly as commands, for example, `summarize` instead of `fabric --pattern summarize`
+You can add the following to your `.zshrc` or `.bashrc` file. You
+can also optionally set the `FABRIC_ALIAS_PREFIX` environment variable
+before, if you'd prefer all the fabric aliases to start with the same prefix.
+
+```bash
+# Loop through all files in the ~/.config/fabric/patterns directory
+for pattern_file in $HOME/.config/fabric/patterns/*; do
+    # Get the base name of the file (i.e., remove the directory path)
+    pattern_name="$(basename "$pattern_file")"
+    alias_name="${FABRIC_ALIAS_PREFIX:-}${pattern_name}"
+
+    # Create an alias in the form: alias pattern_name="fabric --pattern pattern_name"
+    alias_command="alias $alias_name='fabric --pattern $pattern_name'"
+
+    # Evaluate the alias command to add it to the current shell
+    eval "$alias_command"
+done
+
+yt() {
+    if [ "$#" -eq 0 ] || [ "$#" -gt 2 ]; then
+        echo "Usage: yt [-t | --timestamps] youtube-link"
+        echo "Use the '-t' flag to get the transcript with timestamps."
+        return 1
+    fi
+
+    transcript_flag="--transcript"
+    if [ "$1" = "-t" ] || [ "$1" = "--timestamps" ]; then
+        transcript_flag="--transcript-with-timestamps"
+        shift
+    fi
+    local video_link="$1"
+    fabric -y "$video_link" $transcript_flag
+}
+```
+
+You can add the below code for the equivalent aliases inside PowerShell by running `notepad $PROFILE` inside a PowerShell window:
+
+```powershell
+# Path to the patterns directory
+$patternsPath = Join-Path $HOME ".config/fabric/patterns"
+foreach ($patternDir in Get-ChildItem -Path $patternsPath -Directory) {
+    # Prepend FABRIC_ALIAS_PREFIX if set; otherwise use empty string
+    $prefix = $env:FABRIC_ALIAS_PREFIX ?? ''
+    $patternName = "$($patternDir.Name)"
+    $aliasName = "$prefix$patternName"
+    # Dynamically define a function for each pattern
+    $functionDefinition = @"
+function $aliasName {
+    [CmdletBinding()]
+    param(
+        [Parameter(ValueFromPipeline = `$true)]
+        [string] `$InputObject,
+
+        [Parameter(ValueFromRemainingArguments = `$true)]
+        [String[]] `$patternArgs
+    )
+
+    begin {
+        # Initialize an array to collect pipeline input
+        `$collector = @()
+    }
+
+    process {
+        # Collect pipeline input objects
+        if (`$InputObject) {
+            `$collector += `$InputObject
+        }
+    }
+
+    end {
+        # Join all pipeline input into a single string, separated by newlines
+        `$pipelineContent = `$collector -join "`n"
+
+        # If there's pipeline input, include it in the call to fabric
+        if (`$pipelineContent) {
+            `$pipelineContent | fabric --pattern $patternName `$patternArgs
+        } else {
+            # No pipeline input; just call fabric with the additional args
+            fabric --pattern $patternName `$patternArgs
+        }
+    }
+}
+"@
+    # Add the function to the current session
+    Invoke-Expression $functionDefinition
+}
+
+# Define the 'yt' function as well
+function yt {
+    [CmdletBinding()]
+    param(
+        [Parameter()]
+        [Alias("timestamps")]
+        [switch]$t,
+
+        [Parameter(Position = 0, ValueFromPipeline = $true)]
+        [string]$videoLink
+    )
+
+    begin {
+        $transcriptFlag = "--transcript"
+        if ($t) {
+            $transcriptFlag = "--transcript-with-timestamps"
+        }
+    }
+
+    process {
+        if (-not $videoLink) {
+            Write-Error "Usage: yt [-t | --timestamps] youtube-link"
+            return
+        }
+    }
+
+    end {
+        if ($videoLink) {
+            # Execute and allow output to flow through the pipeline
+            fabric -y $videoLink $transcriptFlag
+        }
+    }
+}
+```
+
+This also creates a `yt` alias that allows you to use `yt https://www.youtube.com/watch?v=4b0iet22VIk` to get transcripts, comments, and metadata.
+
+#### Save your files in markdown using aliases
+
+If in addition to the above aliases you would like to have the option to save the output to your favorite markdown note vault like Obsidian then instead of the above add the following to your `.zshrc` or `.bashrc` file:
+
+```bash
+# Define the base directory for Obsidian notes
+obsidian_base="/path/to/obsidian"
+
+# Loop through all files in the ~/.config/fabric/patterns directory
+for pattern_file in ~/.config/fabric/patterns/*; do
+    # Get the base name of the file (i.e., remove the directory path)
+    pattern_name=$(basename "$pattern_file")
+
+    # Remove any existing alias with the same name
+    unalias "$pattern_name" 2>/dev/null
+
+    # Define a function dynamically for each pattern
+    eval "
+    $pattern_name() {
+        local title=\$1
+        local date_stamp=\$(date +'%Y-%m-%d')
+        local output_path=\"\$obsidian_base/\${date_stamp}-\${title}.md\"
+
+        # Check if a title was provided
+        if [ -n \"\$title\" ]; then
+            # If a title is provided, use the output path
+            fabric --pattern \"$pattern_name\" -o \"\$output_path\"
+        else
+            # If no title is provided, use --stream
+            fabric --pattern \"$pattern_name\" --stream
+        fi
+    }
+    "
+done
+```
+
+This will allow you to use the patterns as aliases like in the above for example `summarize` instead of `fabric --pattern summarize --stream`, however if you pass in an extra argument like this `summarize "my_article_title"` your output will be saved in the destination that you set in `obsidian_base="/path/to/obsidian"` in the following format `YYYY-MM-DD-my_article_title.md` where the date gets autogenerated for you.
+You can tweak the date format by tweaking the `date_stamp` format.
+
+### Migration
+
+If you have the Legacy (Python) version installed and want to migrate to the Go version, here's how you do it. It's basically two steps: 1) uninstall the Python version, and 2) install the Go version.
+
+```bash
+# Uninstall Legacy Fabric
+pipx uninstall fabric
+
+# Clear any old Fabric aliases
+(check your .bashrc, .zshrc, etc.)
+# Install the Go version
+go install github.com/danielmiessler/fabric/cmd/fabric@latest
+# Run setup for the new version. Important because things have changed
+fabric --setup
+```
+
+Then [set your environmental variables](#environment-variables) as shown above.
+
+### Upgrading
+
+The great thing about Go is that it's super easy to upgrade. Just run the same command you used to install it in the first place and you'll always get the latest version.
+
+```bash
+go install github.com/danielmiessler/fabric/cmd/fabric@latest
+```
+
+### Shell Completions
+
+Fabric provides shell completion scripts for Zsh, Bash, and Fish
+shells, making it easier to use the CLI by providing tab completion
+for commands and options.
+
+#### Quick install (no clone required)
+
+You can install completions directly via a one-liner:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/danielmiessler/Fabric/refs/heads/main/completions/setup-completions.sh | sh
+```
+
+Optional variants:
+
+```bash
+# Dry-run (see actions without changing your system)
+curl -fsSL https://raw.githubusercontent.com/danielmiessler/Fabric/refs/heads/main/completions/setup-completions.sh | sh -s -- --dry-run
+
+# Override the download source (advanced)
+FABRIC_COMPLETIONS_BASE_URL="https://raw.githubusercontent.com/danielmiessler/Fabric/refs/heads/main/completions" \
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/danielmiessler/Fabric/refs/heads/main/completions/setup-completions.sh)"
+```
+
+#### Zsh Completion
+
+To enable Zsh completion:
+
+```bash
+# Copy the completion file to a directory in your $fpath
+mkdir -p ~/.zsh/completions
+cp completions/_fabric ~/.zsh/completions/
+
+# Add the directory to fpath in your .zshrc before compinit
+echo 'fpath=(~/.zsh/completions $fpath)' >> ~/.zshrc
+echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
+```
+
+#### Bash Completion
+
+To enable Bash completion:
+
+```bash
+# Source the completion script in your .bashrc
+echo 'source /path/to/fabric/completions/fabric.bash' >> ~/.bashrc
+
+# Or copy to the system-wide bash completion directory
+sudo cp completions/fabric.bash /etc/bash_completion.d/
+```
+
+#### Fish Completion
+
+To enable Fish completion:
+
+```bash
+# Copy the completion file to the fish completions directory
+mkdir -p ~/.config/fish/completions
+cp completions/fabric.fish ~/.config/fish/completions/
+```
+
+## Usage
+
+Once you have it all set up, here's how to use it.
+
+```bash
+fabric -h
+```
+
+```plaintext
+Usage:
+  fabric [OPTIONS]
+
+Application Options:
+  -p, --pattern=                    Choose a pattern from the available patterns
+  -v, --variable=                   Values for pattern variables, e.g. -v=#role:expert -v=#points:30
+  -C, --context=                    Choose a context from the available contexts
+      --session=                    Choose a session from the available sessions
+  -a, --attachment=                 Attachment path or URL (e.g. for OpenAI image recognition messages)
+  -S, --setup                       Run setup for all reconfigurable parts of fabric
+  -t, --temperature=                Set temperature (default: 0.7)
+  -T, --topp=                       Set top P (default: 0.9)
+  -s, --stream                      Stream
+  -P, --presencepenalty=            Set presence penalty (default: 0.0)
+  -r, --raw                         Use the defaults of the model without sending chat options (temperature,
+                                    top_p, etc.). Only affects OpenAI-compatible providers. Anthropic models
+                                    always use smart parameter selection to comply with model-specific
+                                    requirements.
+  -F, --frequencypenalty=           Set frequency penalty (default: 0.0)
+  -l, --listpatterns                List all patterns
+      --readpattern=                Print the contents of the named pattern to the terminal
+  -L, --listmodels                  List all available models
+  -x, --listcontexts                List all contexts
+  -X, --listsessions                List all sessions
+  -U, --updatepatterns              Update patterns
+  -c, --copy                        Copy to clipboard
+  -m, --model=                      Choose model
+  -V, --vendor=                     Specify vendor for the selected model (e.g., -V "LM Studio" -m
+                                    openai/gpt-oss-20b)
+      --modelContextLength=         Model context length (only affects ollama)
+  -o, --output=                     Output to file
+      --output-session              Output the entire session (also a temporary one) to the output file
+  -n, --latest=                     Number of latest patterns to list
+  -d, --changeDefaultModel          Change default model
+  -y, --youtube=                    YouTube video or play list "URL" to grab transcript, comments from it and
+                                    send to chat or print it put to the console and store it in the output file
+      --playlist                    Prefer playlist over video if both ids are present in the URL
+      --transcript                  Grab transcript from YouTube video and send to chat (it is used per
+                                    default).
+      --transcript-with-timestamps  Grab transcript from YouTube video with timestamps and send to chat
+      --visual                      Extract visual data from video using OCR and FFmpeg
+      --visual-sensitivity=         Tolerance for FFmpeg scene detection (0.0 - 1.0) (default: 0.4)
+      --visual-fps=                 Extract a specific number of frames per second instead of using scene
+                                    detection
+      --comments                    Grab comments from YouTube video and send to chat
+      --metadata                    Output video metadata
+      --yt-dlp-args=                Additional arguments to pass to yt-dlp (e.g. '--cookies-from-browser brave')
+      --spotify=                    Spotify podcast or episode URL to grab metadata from and send to chat
+  -g, --language=                   Specify the Language Code for the chat, e.g. -g=en -g=zh -g=pt-BR -g=pt-PT
+  -u, --scrape_url=                 Scrape website URL to markdown using Jina AI
+  -q, --scrape_question=            Search question using Jina AI
+  -e, --seed=                       Seed to be used for LMM generation
+  -w, --wipecontext=                Wipe context
+  -W, --wipesession=                Wipe session
+      --printcontext=               Print context
+      --printsession=               Print session
+      --readability                 Convert HTML input into a clean, readable view
+      --input-has-vars              Apply variables to user input
+      --no-variable-replacement     Disable pattern variable replacement
+      --dry-run                     Show what would be sent to the model without actually sending it
+      --serve                       Serve the Fabric Rest API
+      --serveOllama                 Serve the Fabric Rest API with ollama endpoints
+      --address=                    The address to bind the REST API (default: :8080)
+      --api-key=                    API key used to secure server routes
+      --config=                     Path to YAML config file
+      --version                     Print current version
+      --listextensions              List all registered extensions
+      --addextension=               Register a new extension from config file path
+      --rmextension=                Remove a registered extension by name
+      --strategy=                   Choose a strategy from the available strategies
+      --liststrategies              List all strategies
+      --listvendors                 List all vendors
+      --shell-complete-list         Output raw list without headers/formatting (for shell completion)
+      --search                      Enable web search tool for supported models (Anthropic, OpenAI, Gemini, Grok)
+      --search-location=            Set location for web search results (e.g., 'America/Los_Angeles')
+      --image-file=                 Save generated image to specified file path (e.g., 'output.png')
+      --image-size=                 Image dimensions: 1024x1024, 1536x1024, 1024x1536, auto (default: auto)
+      --image-quality=              Image quality: low, medium, high, auto (default: auto)
+      --image-compression=          Compression level 0-100 for JPEG/WebP formats (default: not set)
+      --image-background=           Background type: opaque, transparent (default: opaque, only for PNG/WebP)
+      --suppress-think              Suppress text enclosed in thinking tags
+      --think-start-tag=            Start tag for thinking sections (default: <think>)
+      --think-end-tag=              End tag for thinking sections (default: </think>)
+      --disable-responses-api       Disable OpenAI Responses API (default: false)
+      --transcribe-file=            Audio or video file to transcribe
+      --transcribe-model=           Model to use for transcription (separate from chat model)
+      --split-media-file            Split audio/video files larger than 25MB using ffmpeg
+      --voice=                      TTS voice name for supported models (e.g., Kore, Charon, Puck) (default:
+                                    Kore)
+      --list-gemini-voices          List all available Gemini TTS voices
+      --list-transcription-models   List all available transcription models
+      --notification                Send desktop notification when command completes
+      --notification-command=       Custom command to run for notifications (overrides built-in notifications)
+      --thinking=                   Set reasoning/thinking level (e.g., off, low, medium, high, or numeric
+                                    tokens for Anthropic or Google Gemini)
+      --show-metadata               Print metadata (input/output tokens) to stderr
+      --debug=                      Set debug level (0=off, 1=basic, 2=detailed, 3=trace, 4=wire)
+
+Help Options:
+  -h, --help                        Show this help message
+```
+
+### Debug Levels
+
+Use the `--debug` flag to control runtime logging:
+
+- `0`: off (default)
+- `1`: basic debug info
+- `2`: detailed debugging
+- `3`: trace level
+- `4`: wire level (full request and response bodies)
+
+### Dry Run Mode
+
+Use `--dry-run` to preview what would be sent to the AI model without making an API call:
+
+```bash
+echo "test input" | fabric --dry-run -p summarize
+```
+
+This is useful for debugging patterns, checking prompt construction, and verifying input formatting before using API credits.
+
+### Extensions
+
+Fabric supports extensions that can be called within patterns. See the [Extension Guide](internal/plugins/template/Examples/README.md) for complete documentation.
+
+**Important:** Extensions only work within pattern files, not via direct stdin. See the guide for details and examples.
+
+## REST API Server
+
+Fabric includes a built-in REST API server that exposes all core functionality over HTTP. Start the server with:
+
+```bash
+fabric --serve
+```
+
+The server provides endpoints for:
+
+- Chat completions with streaming responses
+- Pattern management (create, read, update, delete)
+- Context and session management
+- Model and vendor listing
+- YouTube transcript extraction
+- Configuration management
+
+For complete endpoint documentation, authentication setup, and usage examples, see [REST API Documentation](docs/rest-api.md).
+
+### Ollama Compatibility Mode
+
+Fabric can serve as a drop-in replacement for Ollama by exposing Ollama-compatible API endpoints. Start the server with:
+
+```bash
+fabric --serve --serveOllama
+```
+
+This enables the following Ollama-compatible endpoints:
+
+- `GET /api/tags` - List available patterns as models
+- `POST /api/chat` - Chat completions
+- `GET /api/version` - Server version
+
+Applications configured to use the Ollama API can point to your Fabric server instead, allowing you to use any of Fabric's supported AI providers through the Ollama interface. Patterns appear as models (e.g., `summarize:latest`).
+
+## Our approach to prompting
 
 Fabric _Patterns_ are different than most prompts you'll see.
 
 - **First, we use `Markdown` to help ensure maximum readability and editability**. This not only helps the creator make a good one, but also anyone who wants to deeply understand what it does. _Importantly, this also includes the AI you're sending it to!_
 
-Here's an example of a Fabric Pattern
+Here's an example of a Fabric Pattern.
 
 ```bash
-https://github.com/danielmiessler/fabric/blob/main/patterns/extract_wisdom/system.md
+https://github.com/danielmiessler/Fabric/blob/main/data/patterns/extract_wisdom/system.md
 ```
 
 <img width="1461" alt="pattern-example" src="https://github.com/danielmiessler/fabric/assets/50654/b910c551-9263-405f-9735-71ca69bbab6d">
@@ -123,186 +833,46 @@ https://github.com/danielmiessler/fabric/blob/main/patterns/extract_wisdom/syste
 
 - **And finally, we tend to use the System section of the prompt almost exclusively**. In over a year of being heads-down with this stuff, we've just seen more efficacy from doing that. If that changes, or we're shown data that says otherwise, we will adjust.
 
-## Quickstart
+## Examples
 
-The most feature-rich way to use Fabric is to use the `fabric` client, which can be found under <a href="https://github.com/danielmiessler/fabric/tree/main/installer/client">`/client`</a> directory in this repository.
+> The following examples use the macOS `pbpaste` to paste from the clipboard. See the [pbpaste](#pbpaste) section below for Windows and Linux alternatives.
 
-### Required Python Version 
-Ensure you have at least python3.10 installed on your operating system. Otherwise, when you attempt to run the pip install commands, the project will fail to build due to certain dependencies. 
-
-### Setting up the fabric commands
-
-Follow these steps to get all fabric-related apps installed and configured.
-
-1. Navigate to where you want the Fabric project to live on your system in a semi-permanent place on your computer.
-
-```bash
-# Find a home for Fabric
-cd /where/you/keep/code
-```
-
-2. Clone the project to your computer.
-
-```bash
-# Clone Fabric to your computer
-git clone https://github.com/danielmiessler/fabric.git
-```
-
-3. Enter Fabric's main directory.
-
-```bash
-# Enter the project folder (where you cloned it)
-cd fabric
-```
-
-4. Install pipx:
-
-macOS:
-
-```bash
-brew install pipx
-```
-
-Linux:
-
-```bash
-sudo apt install pipx
-```
-
-Windows:
-
-Use WSL and follow the Linux instructions.
-
-5. Install fabric:
-
-```bash
-pipx install .
-```
-
-6. Run setup:
-
-```bash
-fabric --setup
-```
-
-7. Restart your shell to reload everything.
-
-8. Now you are up and running! You can test by running the help.
-
-```bash
-# Making sure the paths are set up correctly
-fabric --help
-```
-
-> [!NOTE]
-> If you're using the `server` functions, `fabric-api` and `fabric-webui` need to be run in distinct terminal windows.
-
-## Updating
-
-To update Fabric, run the following commands.
-
-```bash
-# From the fabric directory
-pipx install . --force
-fabric --update
-```
-
-Then restart your shell.
-
-### Using the `fabric` client
-
-If you want to use it with OpenAI API-compatible inference servers, such as [FastChat](https://github.com/lm-sys/FastChat), [Helmholtz Blablador](http://helmholtz-blablador.fz-juelich.de), [LM Studio](https://lmstudio.ai) and others, simply export the following environment variables:
-
-- `export OPENAI_BASE_URL=https://YOUR-SERVER:8000/v1/`
-- `export DEFAULT_MODEL="YOUR_MODEL"`
-
-And if your server needs authentication tokens, as Blablador does, you export the token the same way you would with OpenAI:
-  
-- `export OPENAI_API_KEY="YOUR TOKEN"`
-
-Once you have it all set up, here's how to use it:
-
-1. Check out the options
-   `fabric -h`
-
-```bash
-usage: fabric -h
-usage: fabric [-h] [--text TEXT] [--copy] [--agents] [--output [OUTPUT]] [--session [SESSION]] [--gui] [--stream] [--list] [--temp TEMP] [--top_p TOP_P] [--frequency_penalty FREQUENCY_PENALTY]
-              [--presence_penalty PRESENCE_PENALTY] [--update] [--pattern PATTERN] [--setup] [--changeDefaultModel CHANGEDEFAULTMODEL] [--model MODEL] [--listmodels]
-              [--remoteOllamaServer REMOTEOLLAMASERVER] [--context]
-
-An open-source framework for augmenting humans using AI.
-
-options:
-  -h, --help            show this help message and exit
-  --text TEXT, -t TEXT  Text to extract summary from
-  --copy, -C            Copy the response to the clipboard
-  --agents, -a          Use praisonAI to create an AI agent and then use it. ex: 'write me a movie script'
-  --output [OUTPUT], -o [OUTPUT]
-                        Save the response to a file
-  --session [SESSION], -S [SESSION]
-                        Continue your previous conversation. Default is your previous conversation
-  --gui                 Use the GUI (Node and npm need to be installed)
-  --stream, -s          Use this option if you want to see the results in realtime. NOTE: You will not be able to pipe the output into another command.
-  --list, -l            List available patterns
-  --temp TEMP           sets the temperature for the model. Default is 0
-  --top_p TOP_P         set the top_p for the model. Default is 1
-  --frequency_penalty FREQUENCY_PENALTY
-                        sets the frequency penalty for the model. Default is 0.1
-  --presence_penalty PRESENCE_PENALTY
-                        sets the presence penalty for the model. Default is 0.1
-  --update, -u          Update patterns.
-  --pattern PATTERN, -p PATTERN
-                        The pattern (prompt) to use
-  --setup               Set up your fabric instance
-  --changeDefaultModel CHANGEDEFAULTMODEL
-                        Change the default model. For a list of available models, use the --listmodels flag.
-  --model MODEL, -m MODEL
-                        Select the model to use
-  --listmodels          List all available models
-  --remoteOllamaServer REMOTEOLLAMASERVER
-                        The URL of the remote ollamaserver to use. ONLY USE THIS if you are using a local ollama server in a non-default location or port
-  --context, -c         Use Context file (context.md) to add context to your pattern
-```
-
-#### Example commands
-
-The client, by default, runs Fabric patterns without needing a server (the Patterns were downloaded during setup). This means the client connects directly to OpenAI using the input given and the Fabric pattern used.
+Now let's look at some things you can do with Fabric.
 
 1. Run the `summarize` Pattern based on input from `stdin`. In this case, the body of an article.
 
-```bash
-pbpaste | fabric --pattern summarize
-```
+    ```bash
+    pbpaste | fabric --pattern summarize
+    ```
 
 2. Run the `analyze_claims` Pattern with the `--stream` option to get immediate and streaming results.
 
-```bash
-pbpaste | fabric --stream --pattern analyze_claims
-```
+    ```bash
+    pbpaste | fabric --stream --pattern analyze_claims
+    ```
 
-3. Run the `extract_wisdom` Pattern with the `--stream` option to get immediate and streaming results from any Youtube video (much like in the original introduction video).
+3. Run the `extract_wisdom` Pattern with the `--stream` option to get immediate and streaming results from any      Youtube video (much like in the original introduction video).
 
-```bash
-yt --transcript https://youtube.com/watch?v=uXs-zPc63kM | fabric --stream --pattern extract_wisdom
-```
+    ```bash
+    fabric -y "https://youtube.com/watch?v=uXs-zPc63kM" --stream --pattern extract_wisdom
+    ```
 
-4. **new** All of the patterns have been added as aliases to your bash (or zsh) config file
+4. Create patterns- you must create a .md file with the pattern and save it to `~/.config/fabric/patterns/[yourpatternname]`.
 
-```bash
-pbpaste | analyze_claims --stream
-```
+5. Run a `analyze_claims` pattern on a website. Fabric uses Jina AI to scrape the URL into markdown format before sending it to the model.
 
-> [!NOTE]
-> More examples coming in the next few days, including a demo video!
+    ```bash
+    fabric -u https://github.com/danielmiessler/fabric/ -p analyze_claims
+    ```
 
-### Just use the Patterns
+## Just use the Patterns
 
 <img width="1173" alt="fabric-patterns-screenshot" src="https://github.com/danielmiessler/fabric/assets/50654/9186a044-652b-4673-89f7-71cf066f32d8">
 
 <br />
+<br />
 
-If you're not looking to do anything fancy, and you just want a lot of great prompts, you can navigate to the [`/patterns`](https://github.com/danielmiessler/fabric/tree/main/patterns) directory and start exploring!
+If you're not looking to do anything fancy, and you just want a lot of great prompts, you can navigate to the [`/patterns`](https://github.com/danielmiessler/fabric/tree/main/data/patterns) directory and start exploring!
 
 We hope that if you used nothing else from Fabric, the Patterns by themselves will make the project useful.
 
@@ -310,324 +880,226 @@ You can use any of the Patterns you see there in any AI application that you hav
 
 The wisdom of crowds for the win.
 
-### Create your own Fabric Mill
+### Prompt Strategies
 
-<img width="2070" alt="fabric_mill_architecture" src="https://github.com/danielmiessler/fabric/assets/50654/ec3bd9b5-d285-483d-9003-7a8e6d842584">
+Fabric also implements prompt strategies like "Chain of Thought" or "Chain of Draft" which can
+be used in addition to the basic patterns.
 
-<br />
+See the [Thinking Faster by Writing Less](https://arxiv.org/pdf/2502.18600) paper and
+the [Thought Generation section of Learn Prompting](https://learnprompting.org/docs/advanced/thought_generation/introduction) for examples of prompt strategies.
 
-But we go beyond just providing Patterns. We provide code for you to build your very own Fabric server and personal AI infrastructure!
+Each strategy is available as a small `json` file in the [`/strategies`](https://github.com/danielmiessler/fabric/tree/main/data/strategies) directory.
 
-## Structure
+The prompt modification of the strategy is applied to the system prompt and passed on to the
+LLM in the chat session.
 
-Fabric is themed off of, well… _fabric_—as in…woven materials. So, think blankets, quilts, patterns, etc. Here's the concept and structure:
+Use `fabric -S` and select the option to install the strategies in your `~/.config/fabric` directory.
 
-### Components
+#### Available Strategies
 
-The Fabric ecosystem has three primary components, all named within this textile theme.
+Fabric includes several prompt strategies:
 
-- The **Mill** is the (optional) server that makes **Patterns** available.
-- **Patterns** are the actual granular AI use cases (prompts).
-- **Stitches** are chained together _Patterns_ that create advanced functionality (see below).
-- **Looms** are the client-side apps that call a specific **Pattern** hosted by a **Mill**.
+- `cot` - Chain-of-Thought: Step-by-step reasoning
+- `cod` - Chain-of-Draft: Iterative drafting with minimal notes (5 words max per step)
+- `tot` - Tree-of-Thought: Generate multiple reasoning paths and select the best one
+- `aot` - Atom-of-Thought: Break problems into smallest independent atomic sub-problems
+- `ltm` - Least-to-Most: Solve problems from easiest to hardest sub-problems
+- `self-consistent` - Self-Consistency: Multiple reasoning paths with consensus
+- `self-refine` - Self-Refinement: Answer, critique, and refine
+- `reflexion` - Reflexion: Answer, critique briefly, and provide refined answer
+- `standard` - Standard: Direct answer without explanation
 
-### CLI-native
-
-One of the coolest parts of the project is that it's **command-line native**!
-
-Each Pattern you see in the `/patterns` directory can be used in any AI application you use, but you can also set up your own server using the `/server` code and then call APIs directly!
-
-Once you're set-up, you can do things like:
-
-```bash
-# Take any idea from `stdin` and send it to the `/write_essay` API!
-echo "An idea that coding is like speaking with rules." | write_essay
-```
-
-### Directly calling Patterns
-
-One key feature of `fabric` and its Markdown-based format is the ability to _directly reference_ (and edit) individual [Patterns](#components) directly—on their own—without any surrounding code.
-
-As an example, here's how to call _the direct location_ of the `extract_wisdom` pattern.
+Use the `--strategy` flag to apply a strategy:
 
 ```bash
-https://github.com/danielmiessler/fabric/blob/main/patterns/extract_wisdom/system.md
+echo "Analyze this code" | fabric --strategy cot -p analyze_code
 ```
 
-This means you can cleanly, and directly reference any pattern for use in a web-based AI app, your own code, or wherever!
-
-Even better, you can also have your [Mill](#components) functionality directly call _system_ and _user_ prompts from `fabric`, meaning you can have your personal AI ecosystem automatically kept up to date with the latest version of your favorite [Patterns](#components).
-
-Here's what that looks like in code:
+List all available strategies with:
 
 ```bash
-https://github.com/danielmiessler/fabric/blob/main/server/fabric_api_server.py
+fabric --liststrategies
 ```
 
-```python
-# /extwis
-@app.route("/extwis", methods=["POST"])
-@auth_required  # Require authentication
-def extwis():
-    data = request.get_json()
-
-    # Warn if there's no input
-    if "input" not in data:
-        return jsonify({"error": "Missing input parameter"}), 400
-
-    # Get data from client
-    input_data = data["input"]
-
-    # Set the system and user URLs
-    system_url = "https://raw.githubusercontent.com/danielmiessler/fabric/main/patterns/extract_wisdom/system.md"
-    user_url = "https://raw.githubusercontent.com/danielmiessler/fabric/main/patterns/extract_wisdom/user.md"
-
-    # Fetch the prompt content
-    system_content = fetch_content_from_url(system_url)
-    user_file_content = fetch_content_from_url(user_url)
-
-    # Build the API call
-    system_message = {"role": "system", "content": system_content}
-    user_message = {"role": "user", "content": user_file_content + "\n" + input_data}
-    messages = [system_message, user_message]
-    try:
-        response = openai.chat.completions.create(
-            model="gpt-4-1106-preview",
-            messages=messages,
-            temperature=0.0,
-            top_p=1,
-            frequency_penalty=0.1,
-            presence_penalty=0.1,
-        )
-        assistant_message = response.choices[0].message.content
-        return jsonify({"response": assistant_message})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-```
-
-## Examples
-
-Here's an abridged output example from the <a href="https://github.com/danielmiessler/fabric/blob/main/patterns/extract_wisdom/system.md">`extract_wisdom`</a> pattern (limited to only 10 items per section).
-
-```bash
-# Paste in the transcript of a YouTube video of Riva Tez on David Perrel's podcast
-pbpaste | extract_wisdom
-```
-
-```markdown
-## SUMMARY:
-
-The content features a conversation between two individuals discussing various topics, including the decline of Western culture, the importance of beauty and subtlety in life, the impact of technology and AI, the resonance of Rilke's poetry, the value of deep reading and revisiting texts, the captivating nature of Ayn Rand's writing, the role of philosophy in understanding the world, and the influence of drugs on society. They also touch upon creativity, attention spans, and the importance of introspection.
-
-## IDEAS:
-
-1. Western culture is perceived to be declining due to a loss of values and an embrace of mediocrity.
-2. Mass media and technology have contributed to shorter attention spans and a need for constant stimulation.
-3. Rilke's poetry resonates due to its focus on beauty and ecstasy in everyday objects.
-4. Subtlety is often overlooked in modern society due to sensory overload.
-5. The role of technology in shaping music and performance art is significant.
-6. Reading habits have shifted from deep, repetitive reading to consuming large quantities of new material.
-7. Revisiting influential books as one ages can lead to new insights based on accumulated wisdom and experiences.
-8. Fiction can vividly illustrate philosophical concepts through characters and narratives.
-9. Many influential thinkers have backgrounds in philosophy, highlighting its importance in shaping reasoning skills.
-10. Philosophy is seen as a bridge between theology and science, asking questions that both fields seek to answer.
-
-## QUOTES:
-
-1. "You can't necessarily think yourself into the answers. You have to create space for the answers to come to you."
-2. "The West is dying and we are killing her."
-3. "The American Dream has been replaced by mass-packaged mediocrity porn, encouraging us to revel like happy pigs in our own meekness."
-4. "There's just not that many people who have the courage to reach beyond consensus and go explore new ideas."
-5. "I'll start watching Netflix when I've read the whole of human history."
-6. "Rilke saw beauty in everything... He sees it's in one little thing, a representation of all things that are beautiful."
-7. "Vanilla is a very subtle flavor... it speaks to sort of the sensory overload of the modern age."
-8. "When you memorize chapters [of the Bible], it takes a few months, but you really understand how things are structured."
-9. "As you get older, if there's books that moved you when you were younger, it's worth going back and rereading them."
-10. "She [Ayn Rand] took complicated philosophy and embodied it in a way that anybody could resonate with."
-
-## HABITS:
-
-1. Avoiding mainstream media consumption for deeper engagement with historical texts and personal research.
-2. Regularly revisiting influential books from youth to gain new insights with age.
-3. Engaging in deep reading practices rather than skimming or speed-reading material.
-4. Memorizing entire chapters or passages from significant texts for better understanding.
-5. Disengaging from social media and fast-paced news cycles for more focused thought processes.
-6. Walking long distances as a form of meditation and reflection.
-7. Creating space for thoughts to solidify through introspection and stillness.
-8. Embracing emotions such as grief or anger fully rather than suppressing them.
-9. Seeking out varied experiences across different careers and lifestyles.
-10. Prioritizing curiosity-driven research without specific goals or constraints.
-
-## FACTS:
-
-1. The West is perceived as declining due to cultural shifts away from traditional values.
-2. Attention spans have shortened due to technological advancements and media consumption habits.
-3. Rilke's poetry emphasizes finding beauty in everyday objects through detailed observation.
-4. Modern society often overlooks subtlety due to sensory overload from various stimuli.
-5. Reading habits have evolved from deep engagement with texts to consuming large quantities quickly.
-6. Revisiting influential books can lead to new insights based on accumulated life experiences.
-7. Fiction can effectively illustrate philosophical concepts through character development and narrative arcs.
-8. Philosophy plays a significant role in shaping reasoning skills and understanding complex ideas.
-9. Creativity may be stifled by cultural nihilism and protectionist attitudes within society.
-10. Short-term thinking undermines efforts to create lasting works of beauty or significance.
-
-## REFERENCES:
-
-1. Rainer Maria Rilke's poetry
-2. Netflix
-3. Underworld concert
-4. Katy Perry's theatrical performances
-5. Taylor Swift's performances
-6. Bible study
-7. Atlas Shrugged by Ayn Rand
-8. Robert Pirsig's writings
-9. Bertrand Russell's definition of philosophy
-10. Nietzsche's walks
-```
+Strategies are stored as JSON files in `~/.config/fabric/strategies/`. See the default strategies for the format specification.
 
 ## Custom Patterns
 
-You can also use Custom Patterns with Fabric, meaning Patterns you keep locally and don't upload to Fabric.
+You may want to use Fabric to create your own custom Patterns—but not share them with others. No problem!
 
-One possible place to store them is `~/.config/custom-fabric-patterns`. 
+Fabric now supports a dedicated custom patterns directory that keeps your personal patterns separate from the built-in ones. This means your custom patterns won't be overwritten when you update Fabric's built-in patterns.
 
-Then when you want to use them, simply copy them into `~/.config/fabric/patterns`.
+### Setting Up Custom Patterns
 
-```bash
-cp -a ~/.config/custom-fabric-patterns/* ~/.config/fabric/patterns/
-```
+1. Run the Fabric setup:
 
-Now you can run them with:
+   ```bash
+   fabric --setup
+   ```
 
-```bash
-pbpaste | fabric -p your_custom_pattern
-```
+2. Select the "Custom Patterns" option from the Tools menu and enter your desired directory path (e.g., `~/my-custom-patterns`)
 
-## Agents
+3. Fabric will automatically create the directory if it does not exist.
 
-NEW FEATURE! We have incorporated [PraisonAI](https://github.com/MervinPraison/PraisonAI) into Fabric. This feature creates AI agents and then uses them to perform a task.
+### Using Custom Patterns
 
-```bash
-echo "Search for recent articles about the future of AI and write me a 500-word essay on the findings" | fabric --agents
-```
+1. Create your custom pattern directory structure:
 
-This feature works with all OpenAI and Ollama models but does NOT work with Claude. You can specify your model with the -m flag.
+   ```bash
+   mkdir -p ~/my-custom-patterns/my-analyzer
+   ```
 
-For more information about this amazing project, please visit https://github.com/MervinPraison/PraisonAI.
+2. Create your pattern file
+
+   ```bash
+   echo "You are an expert analyzer of ..." > ~/my-custom-patterns/my-analyzer/system.md
+   ```
+
+3. **Use your custom pattern:**
+
+   ```bash
+   fabric --pattern my-analyzer "analyze this text"
+   ```
+
+### How It Works
+
+- **Priority System**: Custom patterns take precedence over built-in patterns with the same name
+- **Seamless Integration**: Custom patterns appear in `fabric --listpatterns` alongside built-in ones
+- **Update Safe**: Your custom patterns are never affected by `fabric --updatepatterns`
+- **Private by Default**: Custom patterns remain private unless you explicitly share them
+
+Your custom patterns are completely private and won't be affected by Fabric updates!
 
 ## Helper Apps
 
-These are helper tools to work with Fabric. Examples include things like getting transcripts from media files, getting metadata about media, etc.
+Fabric also makes use of some core helper apps (tools) to make it easier to integrate with your various workflows. Here are some examples:
 
-## yt (YouTube)
+### `to_pdf`
 
-`yt` is a command that uses the YouTube API to pull transcripts, pull user comments, get video duration, and other functions. It's primary function is to get a transcript from a video that can then be stitched (piped) into other Fabric Patterns.
-
-```bash
-usage: yt [-h] [--duration] [--transcript] [url]
-
-vm (video meta) extracts metadata about a video, such as the transcript and the video's duration. By Daniel Miessler.
-
-positional arguments:
-  url           YouTube video URL
-
-options:
-  -h, --help    Show this help message and exit
-  --duration    Output only the duration
-  --transcript  Output only the transcript
-  --comments    Output only the user comments
-```
-
-## ts (Audio transcriptions)
-
-'ts' is a command that uses the OpenAI Whisper API to transcribe audio files. Due to the context window, this tool uses pydub to split the files into 10 minute segments. for more information on pydub, please refer https://github.com/jiaaro/pydub
-
-### Installation
+`to_pdf` is a helper command that converts LaTeX files to PDF format. You can use it like this:
 
 ```bash
-
-mac:
-brew install ffmpeg
-
-linux:
-apt install ffmpeg
-
-windows:
-download instructions https://www.ffmpeg.org/download.html
+to_pdf input.tex
 ```
+
+This will create a PDF file from the input LaTeX file in the same directory.
+
+You can also use it with stdin which works perfectly with the `write_latex` pattern:
 
 ```bash
-ts -h
-usage: ts [-h] audio_file
-
-Transcribe an audio file.
-
-positional arguments:
-  audio_file  The path to the audio file to be transcribed.
-
-options:
-  -h, --help  show this help message and exit
+echo "ai security primer" | fabric --pattern write_latex | to_pdf
 ```
 
-## Save
+This will create a PDF file named `output.pdf` in the current directory.
 
-`save` is a "tee-like" utility to pipeline saving of content, while keeping the output stream intact. Can optionally generate "frontmatter" for PKM utilities like Obsidian via the
-"FABRIC_FRONTMATTER" environment variable
+### `to_pdf` Installation
 
-If you'd like to default variables, set them in `~/.config/fabric/.env`. `FABRIC_OUTPUT_PATH` needs to be set so `save` where to write. `FABRIC_FRONTMATTER_TAGS` is optional, but useful for tracking how tags have entered your PKM, if that's important to you.
-
-### usage
+To install `to_pdf`, install it the same way as you install Fabric, just with a different repo name.
 
 ```bash
-usage: save [-h] [-t, TAG] [-n] [-s] [stub]
-
-save: a "tee-like" utility to pipeline saving of content, while keeping the output stream intact. Can optionally generate "frontmatter" for PKM utilities like Obsidian via the
-"FABRIC_FRONTMATTER" environment variable
-
-positional arguments:
-  stub                stub to describe your content. Use quotes if you have spaces. Resulting format is YYYY-MM-DD-stub.md by default
-
-options:
-  -h, --help          show this help message and exit
-  -t, TAG, --tag TAG  add an additional frontmatter tag. Use this argument multiple timesfor multiple tags
-  -n, --nofabric      don't use the fabric tags, only use tags from --tag
-  -s, --silent        don't use STDOUT for output, only save to the file
+go install github.com/danielmiessler/fabric/cmd/to_pdf@latest
 ```
 
-### Example
+Make sure you have a LaTeX distribution (like TeX Live or MiKTeX) installed on your system, as `to_pdf` requires `pdflatex` to be available in your system's PATH.
+
+### `code2context`
+
+`code2context` is used in conjunction with the `create_coding_feature` pattern.
+It generates a `json` representation of a directory of code that can be fed into an AI model
+with instructions to create a new feature or edit the code in a specified way.
+
+See [the Create Coding Feature Pattern README](./data/patterns/create_coding_feature/README.md) for details.
+
+Install it first using:
 
 ```bash
-echo test | save --tag extra-tag stub-for-name
-test
-
-$ cat ~/obsidian/Fabric/2024-03-02-stub-for-name.md
----
-generation_date: 2024-03-02 10:43
-tags: fabric-extraction stub-for-name extra-tag
----
-test
+go install github.com/danielmiessler/fabric/cmd/code2context@latest
 ```
+
+### `generate_changelog`
+
+`generate_changelog` generates changelogs from git commit history and GitHub pull requests. It walks through your repository's git history, extracts PR information, and produces well-formatted markdown changelogs.
+
+```bash
+generate_changelog --help
+```
+
+Features include SQLite caching for fast incremental updates, GitHub GraphQL API integration for efficient PR fetching, and optional AI-enhanced summaries using Fabric.
+
+Install it using:
+
+```bash
+go install github.com/danielmiessler/fabric/cmd/generate_changelog@latest
+```
+
+See the [generate_changelog README](./cmd/generate_changelog/README.md) for detailed usage and options.
+
+## pbpaste
+
+The [examples](#examples) use the macOS program `pbpaste` to paste content from the clipboard to pipe into `fabric` as the input. `pbpaste` is not available on Windows or Linux, but there are alternatives.
+
+On Windows, you can use the PowerShell command `Get-Clipboard` from a PowerShell command prompt. If you like, you can also alias it to `pbpaste`. If you are using classic PowerShell, edit the file `~\Documents\WindowsPowerShell\.profile.ps1`, or if you are using PowerShell Core, edit `~\Documents\PowerShell\.profile.ps1` and add the alias,
+
+```powershell
+Set-Alias pbpaste Get-Clipboard
+```
+
+On Linux, you can use `xclip -selection clipboard -o` to paste from the clipboard. You will likely need to install `xclip` with your package manager. For Debian based systems including Ubuntu,
+
+```sh
+sudo apt update
+sudo apt install xclip -y
+```
+
+You can also create an alias by editing `~/.bashrc` or `~/.zshrc` and adding the alias,
+
+```sh
+alias pbpaste='xclip -selection clipboard -o'
+```
+
+## Web Interface (Fabric Web App)
+
+Fabric now includes a built-in web interface that provides a GUI alternative to the command-line interface. Refer to [Web App README](/web/README.md) for installation instructions and an overview of features.
 
 ## Meta
 
 > [!NOTE]
 > Special thanks to the following people for their inspiration and contributions!
 
+- _Jonathan Dunn_ for being the absolute MVP dev on the project, including spearheading the new Go version, as well as the GUI! All this while also being a full-time medical doctor!
 - _Caleb Sima_ for pushing me over the edge of whether to make this a public project or not.
-- _Joel Parish_ for super useful input on the project's Github directory structure.
-- _Jonathan Dunn_ for spectacular work on the soon-to-be-released universal client.
+- _Eugen Eisler_ and _Frederick Ros_ for their invaluable contributions to the Go version
+- _David Peters_ for his work on the web interface.
+- _Joel Parish_ for super useful input on the project's Github directory structure..
 - _Joseph Thacker_ for the idea of a `-c` context flag that adds pre-created context in the `./config/fabric/` directory to all Pattern queries.
 - _Jason Haddix_ for the idea of a stitch (chained Pattern) to filter content using a local model before sending on to a cloud model, i.e., cleaning customer data using `llama2` before sending on to `gpt-4` for analysis.
-- _Dani Goland_ for enhancing the Fabric Server (Mill) infrastructure by migrating to FastAPI, breaking the server into discrete pieces, and Dockerizing the entire thing.
-- _Andre Guerra_ for simplifying installation by getting us onto Poetry for virtual environment and dependency management.
+- _Andre Guerra_ for assisting with numerous components to make things simpler and more maintainable.
 
 ### Primary contributors
 
-<a href="https://github.com/danielmiessler"><img src="https://avatars.githubusercontent.com/u/50654?v=4" title="Daniel Miessler" width="50" height="50"></a>
-<a href="https://github.com/xssdoctor"><img src="https://avatars.githubusercontent.com/u/9218431?v=4" title="Jonathan Dunn" width="50" height="50"></a>
-<a href="https://github.com/sbehrens"><img src="https://avatars.githubusercontent.com/u/688589?v=4" title="Scott Behrens" width="50" height="50"></a>
-<a href="https://github.com/agu3rra"><img src="https://avatars.githubusercontent.com/u/10410523?v=4" title="Andre Guerra" width="50" height="50"></a>
+<a href="https://github.com/danielmiessler"><img src="https://avatars.githubusercontent.com/u/50654?v=4" title="Daniel Miessler" width="50" height="50" alt="Daniel Miessler"></a>
+<a href="https://github.com/xssdoctor"><img src="https://avatars.githubusercontent.com/u/9218431?v=4" title="Jonathan Dunn" width="50" height="50" alt="Jonathan Dunn"></a>
+<a href="https://github.com/sbehrens"><img src="https://avatars.githubusercontent.com/u/688589?v=4" title="Scott Behrens" width="50" height="50" alt="Scott Behrens"></a>
+<a href="https://github.com/agu3rra"><img src="https://avatars.githubusercontent.com/u/10410523?v=4" title="Andre Guerra" width="50" height="50" alt="Andre Guerra"></a>
+
+### Contributors
+
+<a href="https://github.com/danielmiessler/fabric/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=danielmiessler/fabric" alt="contrib.rocks" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 `fabric` was created by <a href="https://danielmiessler.com/subscribe" target="_blank">Daniel Miessler</a> in January of 2024.
 <br /><br />
 <a href="https://twitter.com/intent/user?screen_name=danielmiessler">![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/danielmiessler)</a>
+
+## 💜 Support This Project
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Sponsor-❤️-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor">
+
+**I spend hundreds of hours a year on open source. If you'd like to help support this project, you can [sponsor me here](https://github.com/sponsors/danielmiessler). 🙏🏼**
+
+</div>
